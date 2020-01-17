@@ -1,8 +1,17 @@
 $(`.header-logo p`).hide();
-let paddingHeader = 40;
+if ($(window).width() < 700) {
+    paddingHeader = 10;            
+}else{
+    paddingHeader = 40;
+}
 $(window).scroll(function () { 
     if(window.pageYOffset == 0){
-        paddingHeader = 40;
+        if ($(window).width() < 700) {
+            paddingHeader = 10;            
+        }else{
+            paddingHeader = 40;
+        }
+        
         $(`.header-logo p`).hide();
 
         $(`header`).css({'padding' : '20px 0',

@@ -721,8 +721,9 @@ body:hover::-webkit-scrollbar-thumb{
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     animation: backgroundShow .6s ease-in-out forwards;
-    overflow-y: hidden;
+    overflow-y: scroll;
     position: fixed;
     transition: .6s;
 }
@@ -757,17 +758,21 @@ nav{
     display: flex;
     width: 100%;
     height: 100%;
-    display: flex;
     max-width: 1200px;
     margin: 0 auto;
     justify-content: space-between;
     padding-top: 32px;
-    overflow: scroll;
 }
-nav div{
-    width: 24%;
+.column1{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
 }
 nav div div{
+    width: 50%;
+    margin: 0 8px;
+}
+nav div div div{
     display: flex;
     flex-direction: row;
     margin: 0 12px 24px;
@@ -775,22 +780,22 @@ nav div div{
     cursor: pointer;
     position: relative;
 }
-nav div div:hover{
+nav div div div:hover{
     box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
     background-color: #f9f9f9;
 }
-nav div div img{
+nav div div div img{
     width: 64px;
     height: 64px;
     margin-right: 16px;
 }
-nav div div p{
+nav div div div p{
     font-size: 18px;
     color: #666;
     font-family: TensorFont, Tahoma, Geneva, sans-serif;
     margin: auto 0;
 }
-nav div div a{
+nav div div div a{
     position: absolute;
     top: 0;
     left: 0;
@@ -959,6 +964,15 @@ nav div div a{
 br{
     display: none;
 }
+@media(max-width: 1050px){
+    .column1{
+        flex-direction: column;
+    }
+    nav div div {
+        width: 80%;
+        margin: 0 8px;
+    }
+}
 @media(max-width: 1000px){
     .submit-request__submit p{
         font-size: 18px;
@@ -992,12 +1006,6 @@ br{
     }
     .subtitle{
         font-size: calc(2.00668vw + 3.95317px);
-    }
-}
-@media(max-width: 900px){
-    nav{
-        overflow-y: scroll;
-        flex-direction: column;
     }
 }
 @media(max-width: 810px){
@@ -1074,7 +1082,7 @@ br{
     }
     .equipmentBlock > img{
         order: 1;
-        max-width: 298px;
+        max-width: 248px;
         margin: 0 auto;
     }
     .equipmentBlock1{
@@ -1116,6 +1124,17 @@ br{
     }
     .addres .city:first-child{
         font-size: 17px;
+    }
+}
+@media(max-width: 676px){
+    nav{
+        flex-direction: column;
+    }
+    .column1{
+        width: 100%;
+    }
+    nav div div{
+        width: 95%;
     }
 }
 /* media */
