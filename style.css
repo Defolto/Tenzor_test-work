@@ -644,8 +644,8 @@ footer{
 .lineFull{
     width: 100%;
     border-bottom: 1px solid #ccc;
-    margin: 24px 24px;
-    margin-top: 10px;
+    padding: 0 24px;
+    margin: 24px 0; 
 }
 .footerContact-Block .addres{
     width: 50%;
@@ -1082,6 +1082,40 @@ br{
     }
     .equipmentBlock2{
         right: 10px;
+    }
+    .footerMap-Block{
+        flex-direction: column;
+        padding: 0 ;
+        margin: 0;
+    }
+    footer{
+        padding: 0;
+    }
+    .footerMap-Block div h3{
+        font-size: 18px;
+        line-height: 20px;
+        color: #000;
+    }
+    .footerMap-Block div h3 img{
+        transition: .4s;
+    }
+    .footerMap-Block div{
+        box-sizing: border-box;
+        width: 100%;
+        border-top: 1px solid #e4e4e4;
+        padding: 0 0 5px 32px;
+        cursor: pointer;
+    }
+    .footerMap-Block:last-child div:last-child{
+        border-bottom: 1px solid #e4e4e4;
+        margin-bottom: 30px;
+    }
+    /* :last-child почему-то не работает */
+    .addres .city:nth-child(2){
+        display: none;
+    }
+    .addres .city:first-child{
+        font-size: 17px;
     }
 }
 /* media */

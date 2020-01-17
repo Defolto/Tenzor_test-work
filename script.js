@@ -101,8 +101,22 @@ if ($(window).width() < 807) {
     $(`.secondMenu li:nth-child(3)`).html(li_3);
     $(`.header-menu ul li:nth-child(1)`).hide();
     $(`.header-menu ul li:nth-child(2)`).hide();
-    $(`.header-menu ul li:nth-child(3)`).hide();
-
-    
+    $(`.header-menu ul li:nth-child(3)`).hide(); 
 }
 
+if ($(window).width() < 700) {
+    $(`.footerSpisok`).slideUp();
+    $(`.footerMap-Block div h3`).prepend(`<img src="img/arrowFooter.png" alt="стрелка">`);
+}
+
+$(`.footerMap-Block div`).click(function () { 
+    if ($(`#${this.id} ul`).attr("data-group")) {
+        $(`#${this.id} ul`).slideUp();
+        $(`#${this.id} ul`).attr(`data-group`, "");
+        $(`#${this.id} h3 img`).css('transform', 'rotateZ(0deg)');
+    }else{
+        $(`#${this.id} ul`).slideDown();
+        $(`#${this.id} ul`).attr(`data-group`, true);
+        $(`#${this.id} h3 img`).css('transform', 'rotateZ(90deg)');
+    }
+});
